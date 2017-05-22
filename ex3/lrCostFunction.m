@@ -36,14 +36,11 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
+[J, grad] = costFunction(theta, X, y);
 
+J = J + lambda / (2*m) * theta(2:size(theta))' * theta(2:size(theta));
 
-
-
-
-
-
-
+grad = grad + lambda / m * [0; theta(2:size(theta))];
 
 % =============================================================
 
